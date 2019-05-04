@@ -1,0 +1,215 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Đổi mật khẩu</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}"/>
+
+    <!-- ElegantFonts CSS -->
+    <link rel="stylesheet" th:href="@{/css/elegant-fonts.css}"/>
+
+    <!-- themify-icons CSS -->
+    <link rel="stylesheet" th:href="@{/css/themify-icons.css}"/>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" th:href="@{/css/swiper.min.css}"/>
+
+    <!-- Styles -->
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body class="about-page">
+    <div class="page-header">
+        <header class="site-header">
+            <header class="site-header">
+                <div class="top-header-bar">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+                            </div>
+                            <div class="col-8 col-lg-8 d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center">
+                                <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4">
+                                    
+                                </div>
+                                <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2">
+                                    <div class="header-bar-search">
+                                        <form class="flex align-items-stretch">
+                                            <input type="search" placeholder="Tìm kiếm"/>
+                                            <button type="submit" value="" class="flex justify-content-center align-items-center"><i class="fa fa-search"></i></button>
+                                        </form>
+                                    </div><!-- .header-bar-search -->
+                                </div>
+
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="khung">
+                                        <button class="nuttt">
+                                            <img src="images/user.png" alt="avatar" class="ava" style="vertical-align:middle"/>
+                                             user
+                                        </button>   
+                                        <div class="danhmuctt">
+                                            <a href="thaydoithongtinuser.html">Thay Đổi Thông Tin</a>
+                                            <a href="doimatkhauuser">Đổi Mật Khẩu</a>
+                                            <a href="trangchu.html">Đăng Xuất</a>
+                                        </div>
+                                    </div> <!-- end khung -->
+                                </div>               
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .container-fluid -->
+                </div><!-- .top-header-bar -->
+
+                <div class="nav-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3 col-lg-3">
+                            <div class="site-branding">
+                                <h1 class="site-title"><a href="trangchuuser.html" rel="home">Eng<span>Edu</span></a></h1>
+                            </div><!-- .site-branding -->
+                        </div><!-- .col -->
+
+                        <div class="col-9 col-lg-9 flex justify-content-end align-content-center">
+                           <nav class="site-navigation flex justify-content-end align-items-center">
+                                <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
+                                    <li><a href="trangchuuser.html">Trang chủ</a></li>
+                                    <li><a href="hocvideothitructuyen.html">Học qua Video và Thi trực tuyến</a></li>
+                                    <li><a href="lienheuser.html">Liên hệ</a></li>
+                                </ul>
+
+                                <div class="hamburger-menu d-lg-none">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div><!-- .hamburger-menu -->
+
+                            </nav><!-- .site-navigation -->
+                        </div><!-- .col -->
+                    </div><!-- .row -->
+                </div><!-- .container -->
+            </div><!-- .nav-bar -->
+            </header><!-- .site-header -->
+        </header><!-- .site-header -->
+
+        <div class="page-header-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <header class="entry-header">
+                        <h1>ĐỔI MẬT KHẨU</h1>
+                        </header><!-- .entry-header -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .page-header-overlay -->
+    </div><!-- .page-header -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumbs">
+                    <ul class="flex flex-wrap align-items-center p-0 m-0">
+                        <li><a href="trangchuuser.html"><i class="fa fa-home"></i>Trang chủ</a></li>
+                        <li><a href="doimatkhauuser.html">Đổi mật khẩu</a></li>
+                    </ul>
+                </div><!-- .breadcrumbs -->
+            </div><!-- .col -->
+        </div><!-- .row -->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="about-heading">
+                    <h2 class="entry-title">ĐỔI MẬT KHẨU</h2>
+                </div><!-- .about-heading -->
+            </div><!-- .col -->
+        </div><!-- .row -->
+
+        <form class="flogin" style="padding-bottom: 30px" method="POST" th:action="@{/xulydoimatkhau}">
+                <div class="row text-center"> <!-- mật khẩu cũ -->
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right">
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center" style="padding-top: 20px">
+                        <label>Mật khẩu cũ</label>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <input type="password" name="oldpass" required="true" /> 
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    </div>
+                </div>
+                <div class="row text-center"> <!-- mật khẩu mới-->
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right">
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center" style="padding-top: 20px">
+                        <label>Mật khẩu mới</label>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <input type="password" name="newpass" required="true"/> 
+                    </div>
+                </div>
+                <div class="row text-center"> <!-- Nhập lại mật khẩu mới-->
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right">
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center" style="padding-top: 20px">
+                        <label>Nhập lại mật khẩu mới</label>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <input type="password" name="repass" required="true"/>   
+                    </div>
+                </div>
+                
+                <div class="row text-center"> <!-- save -->
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+                        <button type="submit" class="btn btn-danger">Cập nhật mật khẩu</button>
+                    </div>
+                </div>
+                
+                <div class="container text-center">
+					<th:block th:if="${checkdoimatkhau==1}">
+						<h5 style="color: red">Mật khẩu cũ không đúng!</h5>
+					</th:block>
+					<th:block th:if="${checkdoimatkhau==2}">
+						<h5 style="color: red">Xác nhận mật khẩu không khớp!</h5>
+					</th:block>
+				</div>
+            </form>
+    </div><!-- .container -->
+
+        <footer class="footer-area section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 logo-left no-padding text-center">
+                        <h1 class="site-title text-center">
+                            <a href="trangchuuser.html" class="text-center">Eng<span>Edu</span></a>
+                        </h1>
+                </div>
+            </div>
+            <div class="text-center" style="padding-top: 20px">
+                <p class="footer-text m-0 col-lg-12 col-md-12" style="text-align: center; color: white;">@Education Application by Student HCMUTE, 2019</p>
+            </div>
+            <div class="footer-bottom row text-center">
+                <div class="col-lg-12 col-md-12 footer-social text-center">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+     <script type='text/javascript' th:src='@{/js/jquery.js}'></script>
+    <script type='text/javascript' th:src='@{/js/swiper.min.js}'></script>
+    <script type='text/javascript' th:src='@{/js/masonry.pkgd.min.js}'></script>
+    <script type='text/javascript' th:src='@{/js/jquery.collapsible.min.js}'></script>
+    <script type='text/javascript' th:src='@{/js/custom.js}'></script>
+
+</body>
+</html>

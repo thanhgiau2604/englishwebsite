@@ -157,7 +157,7 @@
                             <td class="text-center" th:text="${acc.getUsername()}"></td>
                             <td class="text-center" th:text="${acc.getFullname()}"></td>
                             <td class="text-center"><div class="btn btn-success"><a th:href="@{/qlthongtin={id}(id=${acc.getUsername()})}">Thay đổi thông tin</a></div></td>
-                            <td class="text-center"><div class="btn btn-danger"><a href="">Xóa tài khoản</a></div></td>
+                            <td class="text-center"><div class="btn btn-danger"><a th:href="@{/xoataikhoan={id}(id=${acc.getUsername()})}">Xóa tài khoản</a></div></td>
                         </tr>
                     </tbody>
                 </table>
@@ -186,12 +186,10 @@
             </div>
         </div>
     </footer>
-
      <script type='text/javascript' th:src='@{/js/jquery.js}'></script>
     <script type='text/javascript' th:src='@{/js/swiper.min.js}'></script>
     <script type='text/javascript' th:src='@{/js/masonry.pkgd.min.js}'></script>
     <script type='text/javascript' th:src='@{/js/jquery.collapsible.min.js}'></script>
     <script type='text/javascript' th:src='@{/js/custom.js}'></script>
-
 </body>
 </html>

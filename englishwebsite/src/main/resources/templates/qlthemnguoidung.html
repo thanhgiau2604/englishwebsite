@@ -132,7 +132,7 @@
             </div><!-- .col -->
         </div><!-- .row -->
 
-        <form class="flogin" style="padding-bottom: 30px">
+        <form class="flogin" style="padding-bottom: 30px" method="POST" th:action="@{/qlthemtaikhoan}">
                 <div class="row text-center"> <!-- tendangnhap -->
                     <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right">
                     </div>
@@ -140,7 +140,7 @@
                         <label>Tên đăng nhập</label>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        <input type="text" name="uname"/> 
+                        <input type="text" name="uname" required="true"/> 
                     </div>
                     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                     </div>
@@ -152,7 +152,7 @@
                         <label>Mật khẩu</label>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        <input type="password" name="password"/> 
+                        <input type="text" name="password" required="true"/> 
                     </div>
                     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                     </div>
@@ -164,7 +164,7 @@
                         <label>Họ tên</label>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        <input type="text" name="uname" required="true"/> 
+                        <input type="text" name="fullname" required="true"/> 
                     </div>
                 </div>
                 <div class="row text-center"> <!-- so dien thoai -->
@@ -174,17 +174,17 @@
                         <label>Số điện thoại</label>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        <input type="text" name="uname" required="true"/>   
+                        <input type="text" name="phone" required="true"/>   
                     </div>
                 </div>
                 <div class="row text-center"> <!-- email -->
                     <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right">
                     </div>
                     <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center" style="padding-top: 20px">
-                        <label>email</label>
+                        <label>Email</label>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        <input type="text" name="uname" required="true"/>   
+                        <input type="text" name="email" required="true"/>   
                     </div>
                 </div>
                 <div class="row text-center"> <!-- dia chi -->
@@ -194,15 +194,24 @@
                         <label>Địa chỉ</label>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        <input type="text" name="uname" required="true"/> 
+                        <input type="text" name="address" required="true"/> 
+                    </div>
+                </div>
+                <div class="row text-center" style="padding-top:15px"> <!-- dia chi -->
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right">
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center" style="padding-top: 20px">
+                        <label></label>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <input type="checkbox" name="isadmin"/> Admin 
                     </div>
                 </div>
                 <div class="row text-center"> <!-- dia chi -->
                     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
-                        <button type="submit" class="btn btn-danger"><a href="ThayDoiThongTin.html" style="color: white">Lưu thông tin</a>
-                        </button>
+                        <button type="submit" class="btn btn-danger">Lưu thông tin</button>
                     </div>
                 </div>
             </form>

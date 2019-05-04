@@ -36,4 +36,16 @@ public interface AccountRepository extends CrudRepository<Account, String>{
 			+ "VALUES(:username,:password,:fullname,:phone,:email,:address,0)", nativeQuery=true)
 	void AddUser(@Param("username") String username, @Param("password") String password, @Param("fullname") String fullname,
 			@Param("phone") String phone, @Param("email") String email, @Param("address") String address);
+	
+	@Modifying
+	@Transactional
+	@Query("Delete Account ac where ac.username=:username")
+	void DeleteUser(@Param("username") String username);
+	
+	@Modifying
+	@Transactional
+	@Query(value = "Insert INTO Account (username,password,fullname,phone,email,address,isad) "
+			+ "VALUES(:username,:password,:fullname,:phone,:email,:address,:isad)", nativeQuery=true)
+	void AdminAddUser(@Param("username") String username, @Param("password") String password, @Param("fullname") String fullname,
+			@Param("phone") String phone, @Param("email") String email, @Param("address") String address, @Param("isad") int isad);
 }

@@ -134,6 +134,33 @@ public class HomeController {
 		return "qlnguoidung";
 	}
 	
+	//Mapping page thêm ngdung
+	@RequestMapping(value = "/qlthemnguoidung", method = RequestMethod.GET)
+	public String QLThemNguoiDung(Model model) { 
+		return "qlthemnguoidung";
+	}
+	
+	//Admin thêm user
+		@RequestMapping(value = "/qlthemtaikhoan", method = RequestMethod.POST)
+		public String QLThemUser(@RequestParam(name="uname") String username, @RequestParam(name="password") String password, 
+				@RequestParam(name="fullname") String fullname, 
+				@RequestParam(name="phone") String phone, @RequestParam(name="email") String email, @RequestParam(name="address") String address,
+				@RequestParam(value="isadmin",defaultValue="false") boolean isadmin, Model model) { 
+			int admin=0;
+			if (isadmin) admin=1;
+			accountService.AdminAddUser(username, password, fullname, phone, email, address, admin);
+			model.addAttribute("lAccount",accountService.findAll());
+			return "qlnguoidung";
+		}
+	
+	//Xử lý xóa user
+	@RequestMapping(value = "/xoataikhoan={id}", method = RequestMethod.GET)
+	public String QLXoaUser(@PathVariable("id") String username, Model model) { 
+		accountService.DeleteUser(username);
+		model.addAttribute("lAccount",accountService.findAll());
+		return "qlnguoidung";
+	}
+	
 	//Mapping trang đổi mật khẩu
 	
 	@RequestMapping(value = "/doimatkhauuser", method = RequestMethod.GET)
@@ -184,5 +211,13 @@ public class HomeController {
 		return "dangnhap";
 	}
 	
-	//Quản lý bài học
+	//Mapping trang liên hệ
+	@RequestMapping(value = "/lienhe", method = RequestMethod.GET)
+	public String LienHe() { 
+		return "lienhe";
+	}
+	@RequestMapping(value = "/lienheuser", method = RequestMethod.GET)
+	public String LienHe_User() { 
+		return "lienheuser";
+	}
 }

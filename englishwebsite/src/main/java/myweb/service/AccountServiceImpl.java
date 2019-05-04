@@ -43,4 +43,16 @@ public class AccountServiceImpl implements AccountService{
 		accountRepository.AddUser(username, password, fullname, phone, email, address); 
 		
 	}
+
+	@Override
+	public void DeleteUser(String username) {
+		accountRepository.DeleteUser(username); 
+		
+	}
+
+	@Override
+	public void AdminAddUser(String username, String password, String fullname, String phone, String email,
+			String address, int isad) {
+		accountRepository.AdminAddUser(username, password, fullname, phone, email, address, isad); 
+	}
 }

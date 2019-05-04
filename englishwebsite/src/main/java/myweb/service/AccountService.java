@@ -19,4 +19,8 @@ public interface AccountService {
     void UpdatePassword(String password, String username);
     
     void AddUser(String username, String password, String fullname, String phone, String email, String address);
+    
+    void DeleteUser(String username);
+    
+    void AdminAddUser(String username, String password, String fullname, String phone, String email, String address, int isad);
 }

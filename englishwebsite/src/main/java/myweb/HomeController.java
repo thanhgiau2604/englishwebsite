@@ -220,4 +220,10 @@ public class HomeController {
 	public String LienHe_User() { 
 		return "lienheuser";
 	}
+	
+	//Quản lý bài học
+	@RequestMapping(value = "/qlbaihoc", method = RequestMethod.GET)
+	public String QLBaiHoc(Model model) { 
+		return "qlbaihoc";
+	}
 }

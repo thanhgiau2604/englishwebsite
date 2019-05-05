@@ -10,12 +10,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import myweb.entity.Topic;
 import myweb.service.TopicService;
+import myweb.service.VideoService;
 
 @Controller
 public class QLBHController {
 	
 	@Autowired
     private TopicService topicService;
+	@Autowired
+    private VideoService videoService;
 	
 	// Quản lý bài học
 	@RequestMapping(value = "/qlbaihoc", method = RequestMethod.GET)
@@ -64,4 +67,48 @@ public class QLBHController {
 			model.addAttribute("lTopic",topicService.findAll());
 			return "qlbaihoc_topic";
 		}
+		
+	//Quản lý video
+		@RequestMapping(value = "/qlbaihoc_video", method = RequestMethod.GET)
+		public String QLBaiHoc_Video(Model model) {	
+			model.addAttribute("lVideo",videoService.findAll());
+			return "qlbaihoc_video";
+		}	
+		
+	//Thêm video
+		@RequestMapping(value = "/qlbaihoc_themvideo", method = RequestMethod.GET)
+		public String QLBaiHoc_ThemVideo(Model model) {				
+			return "qlbaihoc_themvideo";
+		}
+	
+		@RequestMapping(value = "/xulythemvideo", method = RequestMethod.POST)
+		public String XuLyThemVideo(@RequestParam("idvideo") String idvideo, @RequestParam("url") String url, 
+				@RequestParam("namevideo") String namevideo, @RequestParam("level") String level, @RequestParam("topic") String topic, Model model) {	
+			int capdo = Integer.parseInt(level);
+			videoService.AddVideo(idvideo, url, namevideo, capdo, topic);
+			model.addAttribute("lVideo",videoService.findAll());
+			return "qlbaihoc_video";	
+		}
+	//Sửa video
+		@RequestMapping(value = "/qlbaihoc_chinhsuavideo={id}", method = RequestMethod.GET)
+		public String QLBaiHoc_ChinhSuaVideo(@PathVariable("id") String idvideo, Model model) {
+			model.addAttribute("video", videoService.findOne(idvideo)); 
+			return "qlbaihoc_chinhsuavideo";
+		}
+	
+		@RequestMapping(value = "/xulychinhsuavideo", method = RequestMethod.POST)
+		public String XuLyEditVideo(@RequestParam("idvideo") String idvideo, @RequestParam("url") String url, 
+				@RequestParam("namevideo") String namevideo, @RequestParam("level") String level, @RequestParam("topic") String topic, Model model) {	
+			int capdo = Integer.parseInt(level);
+			videoService.UpdateVideo(url, namevideo, capdo, topic, idvideo); 
+			model.addAttribute("lVideo",videoService.findAll());
+			return "qlbaihoc_video";	
+		}
+	//Xóa video
+		@RequestMapping(value = "/xoavideo={id}", method = RequestMethod.GET)
+		public String XuLyXoaVideo(@PathVariable("id") String idvideo, Model model) {	
+			videoService.DeleteVideo(idvideo); 
+			model.addAttribute("lVideo",videoService.findAll());
+			return "qlbaihoc_video";
+		}	
 }

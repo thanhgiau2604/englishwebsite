@@ -140,7 +140,7 @@
             </div><!-- .col -->
         </div><!-- .row -->
 
-        <form class="flogin" style="padding-bottom: 30px">
+        <form class="flogin" style="padding-bottom: 30px" method="POST" th:action="@{/xulychinhsuavideo}">
             <div class="row text-center"> <!-- Mã video -->
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right">
                 </div>
@@ -148,7 +148,7 @@
                     <label>Mã video</label>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <input type="text" name="idvideo" readonly="true" value="video1" /> 
+                    <input type="text" name="idvideo" readonly="true" th:value="${video.getIdvideo()}" /> 
                 </div>
                 <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 </div>
@@ -160,7 +160,7 @@
                     <label>URL</label>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <input type="text" name="url" value="http://youtube.com/dhshdhds" /> 
+                    <input type="text" name="url" th:value="${video.getUrl()}" /> 
                 </div>
                 <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 </div>
@@ -172,7 +172,7 @@
                     <label>Tên video</label>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <input type="text" name="namevideo" required="true" value="Video các dạng động từ" /> 
+                    <input type="text" name="namevideo" required="true" th:value="${video.getNamevideo()}" /> 
                 </div>
             </div>
             <div class="row text-center"> <!-- Cấp độ -->
@@ -183,13 +183,13 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <div class="radio">
-                        <label><input type="radio" name="level" checked="true"/>Dễ</label>
+                        <label><input type="radio" name="level" value="1"/>Dễ</label>
                     </div>
                     <div class="radio">
-                      <label><input type="radio" name="level"/>Trung bình</label>
+                      <label><input type="radio" name="level" value="2"/>Trung bình</label>
                   </div>
                   <div class="radio">
-                      <label><input type="radio" name="level"/>Khó</label>
+                      <label><input type="radio" name="level" value="3"/>Khó</label>
                   </div>
               </div>
           </div>
@@ -200,14 +200,14 @@
                 <label>Chủ đề</label>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <input type="text" name="topic" required="true" value="verbs" /> 
+                <input type="text" name="topic" required="true" th:value="${video.getTopic()}" /> 
             </div>
         </div>
         <div class="row text-center">
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
-                <button type="submit" class="btn btn-danger"><a href="ThayDoiThongTin.html" style="color: white">Lưu video</a>
+                <button type="submit" class="btn btn-danger">Lưu video
                 </button>
             </div>
         </div>

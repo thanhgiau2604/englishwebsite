@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "topic") //tên table trong csdl
+@Table(name = "video") //tên table trong csdl
 public class Video {
 	
 	@Id
@@ -19,6 +19,9 @@ public class Video {
 	@Column(name = "url")
     private String url;
 	
+	@Column(name = "namevideo")
+    private String namevideo;
+	
 	@Column(name = "level")
     private int level;
 	
@@ -28,9 +31,11 @@ public class Video {
 	public Video() {
 	}
 
-	public Video(String idvideo, String url, int level, String topic) {
+	public Video(String idvideo, String url, String namevideo, int level, String topic) {
+		super();
 		this.idvideo = idvideo;
 		this.url = url;
+		this.namevideo = namevideo;
 		this.level = level;
 		this.topic = topic;
 	}
@@ -49,6 +54,14 @@ public class Video {
 
 	public void setUrl(String url) {
 		this.url = url;
+	}
+
+	public String getNamevideo() {
+		return namevideo;
+	}
+
+	public void setNamevideo(String namevideo) {
+		this.namevideo = namevideo;
 	}
 
 	public int getLevel() {

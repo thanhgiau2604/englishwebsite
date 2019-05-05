@@ -19,23 +19,23 @@ public class Question {
 	@Column(name = "content")
     private String content;
 	
-	@Column(name = "a")
-    private String optionA;
+	@Column(name = "optiona")
+    private String optiona;
 	
-	@Column(name = "b")
-    private String optionB;
+	@Column(name = "optionb")
+    private String optionb;
 	
-	@Column(name = "c")
-    private String optionC;
+	@Column(name = "optionc")
+    private String optionc;
 	
-	@Column(name = "d")
-    private String optionD;
+	@Column(name = "optiond")
+    private String optiond;
 	
-	@Column(name = "key")
-    private char key;
+	@Column(name = "keyquestion")
+    private char keyquestion;
 	
-	@Column(name = "level")
-    private int level;
+	@Column(name = "levelquestion")
+    private int levelquestion;
 	
 	@Column(name = "topic")
     private String topic;
@@ -44,16 +44,16 @@ public class Question {
 		
 	}
 
-	public Question(String idquestion, String content, String optionA, String optionB, String optionC, String optionD,
-			char key, int level, String topic) {
+	public Question(String idquestion, String content, String optiona, String optionb, String optionc, String optiond,
+			char keyquestion, int levelquestion, String topic) {
 		this.idquestion = idquestion;
 		this.content = content;
-		this.optionA = optionA;
-		this.optionB = optionB;
-		this.optionC = optionC;
-		this.optionD = optionD;
-		this.key = key;
-		this.level = level;
+		this.optiona = optiona;
+		this.optionb = optionb;
+		this.optionc = optionc;
+		this.optiond = optiond;
+		this.keyquestion = keyquestion;
+		this.levelquestion = levelquestion;
 		this.topic = topic;
 	}
 
@@ -73,52 +73,52 @@ public class Question {
 		this.content = content;
 	}
 
-	public String getOptionA() {
-		return optionA;
+	public String getOptiona() {
+		return optiona;
 	}
 
-	public void setOptionA(String optionA) {
-		this.optionA = optionA;
+	public void setOptiona(String optiona) {
+		this.optiona = optiona;
 	}
 
-	public String getOptionB() {
-		return optionB;
+	public String getOptionb() {
+		return optionb;
 	}
 
-	public void setOptionB(String optionB) {
-		this.optionB = optionB;
+	public void setOptionb(String optionb) {
+		this.optionb = optionb;
 	}
 
-	public String getOptionC() {
-		return optionC;
+	public String getOptionc() {
+		return optionc;
 	}
 
-	public void setOptionC(String optionC) {
-		this.optionC = optionC;
+	public void setOptionc(String optionc) {
+		this.optionc = optionc;
 	}
 
-	public String getOptionD() {
-		return optionD;
+	public String getOptiond() {
+		return optiond;
 	}
 
-	public void setOptionD(String optionD) {
-		this.optionD = optionD;
+	public void setOptiond(String optiond) {
+		this.optiond = optiond;
 	}
 
-	public char getKey() {
-		return key;
+	public char getKeyquestion() {
+		return keyquestion;
 	}
 
-	public void setKey(char key) {
-		this.key = key;
+	public void setKeyquestion(char keyquestion) {
+		this.keyquestion = keyquestion;
 	}
 
-	public int getLevel() {
-		return level;
+	public int getLevelquestion() {
+		return levelquestion;
 	}
 
-	public void setLevel(int level) {
-		this.level = level;
+	public void setLevelquestion(int levelquestion) {
+		this.levelquestion = levelquestion;
 	}
 
 	public String getTopic() {

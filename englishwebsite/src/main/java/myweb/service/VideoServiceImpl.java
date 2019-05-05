@@ -18,8 +18,8 @@ public class VideoServiceImpl implements VideoService{
 	}
 
 	@Override
-	public Video findOne(String idtopic) {
-		return videoRepository.findOne(idtopic);
+	public Video findOne(String idvideo) {
+		return videoRepository.findOne(idvideo);
 	}
 
 	@Override

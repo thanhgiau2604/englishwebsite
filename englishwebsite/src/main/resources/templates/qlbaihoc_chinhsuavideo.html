@@ -183,13 +183,29 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <div class="radio">
-                        <label><input type="radio" name="level" value="1"/>Dễ</label>
+                    	<th:block th:if="${level==1}">
+							<label><input type="radio" name="level" value="1" checked="true"/>Dễ</label>
+						</th:block>
+						<th:block th:unless="${level==1}">
+                        	<label><input type="radio" name="level" value="1"/>Dễ</label>
+                        </th:block>
                     </div>
                     <div class="radio">
-                      <label><input type="radio" name="level" value="2"/>Trung bình</label>
+                    	<th:block th:if="${level==2}">
+							<label><input type="radio" name="level" value="2" checked="true"/>Trung bình</label>
+						</th:block>
+						<th:block th:unless="${level==2}">
+                        	<label><input type="radio" name="level" value="2"/>Trung bình</label>
+                        </th:block>
                   </div>
                   <div class="radio">
-                      <label><input type="radio" name="level" value="3"/>Khó</label>
+                  		<th:block th:if="${level==3}">
+							<label><input type="radio" name="level" value="3" checked="true"/>Khó</label>
+						</th:block>
+						<th:block th:unless="${level==3}">
+                        	<label><input type="radio" name="level" value="3"/>Khó</label>
+                        </th:block>
+                      	
                   </div>
               </div>
           </div>

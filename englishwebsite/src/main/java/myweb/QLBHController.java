@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import myweb.entity.Topic;
+import myweb.entity.Video;
 import myweb.service.TopicService;
 import myweb.service.VideoService;
 
@@ -92,6 +93,8 @@ public class QLBHController {
 	//Sửa video
 		@RequestMapping(value = "/qlbaihoc_chinhsuavideo={id}", method = RequestMethod.GET)
 		public String QLBaiHoc_ChinhSuaVideo(@PathVariable("id") String idvideo, Model model) {
+			Video video = videoService.findOne(idvideo);
+			model.addAttribute("level",video.getLevel());
 			model.addAttribute("video", videoService.findOne(idvideo)); 
 			return "qlbaihoc_chinhsuavideo";
 		}

@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import myweb.entity.Question;
 import myweb.entity.Topic;
 import myweb.entity.Video;
+import myweb.service.QuestionService;
 import myweb.service.TopicService;
 import myweb.service.VideoService;
 
@@ -20,6 +22,8 @@ public class QLBHController {
     private TopicService topicService;
 	@Autowired
     private VideoService videoService;
+	@Autowired
+    private QuestionService questionService;
 	
 	// Quản lý bài học
 	@RequestMapping(value = "/qlbaihoc", method = RequestMethod.GET)
@@ -114,4 +118,53 @@ public class QLBHController {
 			model.addAttribute("lVideo",videoService.findAll());
 			return "qlbaihoc_video";
 		}	
+		
+	//Quản lý câu hỏi
+		@RequestMapping(value = "/qlbaihoc_cauhoi", method = RequestMethod.GET)
+		public String QLBaiHoc_CauHoi(Model model) {	
+			model.addAttribute("lCauHoi",questionService.findAll());
+			return "qlbaihoc_cauhoi";
+		}
+	//Thêm câu hỏi
+		@RequestMapping(value = "/qlbaihoc_themcauhoi", method = RequestMethod.GET)
+		public String QLBaiHoc_ThemCauHoi(Model model) {				
+			return "qlbaihoc_themcauhoi";
+		}
+	
+		@RequestMapping(value = "/xulythemcauhoi", method = RequestMethod.POST)
+		public String XuLyThemCauHoi(@RequestParam("idquestion") String idquestion, @RequestParam("content") String content, 
+				@RequestParam("optiona") String optiona, @RequestParam("optionb") String optionb, @RequestParam("optionc") String optionc, 
+				@RequestParam("optiond") String optiond, @RequestParam("keyquestion") String keyquestion, 
+				@RequestParam("levelquestion") String levelquestion, @RequestParam("topic") String topic, Model model) {	
+			int capdo = Integer.parseInt(levelquestion);
+			questionService.AddQuestion(idquestion, content, optiona, optionb, optionc, optiond, keyquestion, capdo, topic); 
+			model.addAttribute("lCauHoi",questionService.findAll());
+			return "qlbaihoc_cauhoi";	
+		}
+	//Sửa câu hỏi
+		@RequestMapping(value = "/qlbaihoc_chinhsuacauhoi={id}", method = RequestMethod.GET)
+		public String QLBaiHoc_ChinhSuaCauHoi(@PathVariable("id") String idquestion, Model model) {
+			Question question = questionService.findOne(idquestion);
+			model.addAttribute("level",question.getLevelquestion());
+			model.addAttribute("question", question); 
+			return "qlbaihoc_chinhsuacauhoi";
+		}
+		
+		@RequestMapping(value = "/xulychinhsuacauhoi", method = RequestMethod.POST)
+		public String XuLyChinhSuaCauHoi(@RequestParam("idquestion") String idquestion, @RequestParam("content") String content, 
+				@RequestParam("optiona") String optiona, @RequestParam("optionb") String optionb, @RequestParam("optionc") String optionc, 
+				@RequestParam("optiond") String optiond, @RequestParam("keyquestion") String keyquestion, 
+				@RequestParam("levelquestion") String levelquestion, @RequestParam("topic") String topic, Model model) {	
+			int capdo = Integer.parseInt(levelquestion);
+			questionService.UpdateQuestion(content, optiona, optionb, optionc, optiond, keyquestion, capdo, topic, idquestion); 
+			model.addAttribute("lCauHoi",questionService.findAll());
+			return "qlbaihoc_cauhoi";	
+		}
+	//Xóa câu hỏi
+		@RequestMapping(value = "/xoacauhoi={id}", method = RequestMethod.GET)
+		public String XuLyXoaCauHoi(@PathVariable("id") String idquestion, Model model) {	
+			questionService.DeleteQuestion(idquestion); 
+			model.addAttribute("lCauHoi",questionService.findAll());
+			return "qlbaihoc_cauhoi";
+		}
 }

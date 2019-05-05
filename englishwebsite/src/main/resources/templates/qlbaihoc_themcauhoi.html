@@ -1,9 +1,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Quản lý Câu hỏi</title>
+    <title>Thêm câu hỏi</title>
 
     <!-- Required meta tags -->
-     <meta charset="utf-8"/>
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
     <!-- Bootstrap CSS -->
@@ -29,10 +29,6 @@
 		background: url([[@{/images/courses-header.jpg}]]) no-repeat center;
 		}
 	</style>
-	
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body class="about-page">
     <div class="page-header">
@@ -65,7 +61,7 @@
                                         </button>   
                                         <div class="danhmuctt">
                                             <a href="thaydoithongtinad.html">Thay Đổi Thông Tin</a>
-                                            <a href="doimatkhauad">Đổi Mật Khẩu</a>
+                                            <a href="doimatkhauad.html">Đổi Mật Khẩu</a>
                                             <a href="trangchu.html">Đăng Xuất</a>
                                         </div>
                                     </div> <!-- end khung -->
@@ -113,7 +109,7 @@
                 <div class="row">
                     <div class="col-12">
                         <header class="entry-header">
-                            <h1>QUẢN LÝ CÂU HỎI</h1>
+                        <h1>THÊM CÂU HỎI</h1>
                         </header><!-- .entry-header -->
                     </div><!-- .col -->
                 </div><!-- .row -->
@@ -127,7 +123,8 @@
                 <div class="breadcrumbs">
                     <ul class="flex flex-wrap align-items-center p-0 m-0">
                         <li><a href="trangchuad.html"><i class="fa fa-home"></i>Trang chủ</a></li>
-                        <li><a href="qlbaihoc_cauhoi.html">QL Câu hỏi</a></li>
+                        <li><a href="qlnguoidung.html">QL Người dùng</a></li>
+                        <li><a href="qlthaydoithongtin.html">Thay đổi thông tin</a></li>
                     </ul>
                 </div><!-- .breadcrumbs -->
             </div><!-- .col -->
@@ -136,60 +133,115 @@
         <div class="row">
             <div class="col-12">
                 <div class="about-heading">
-                    <h2 class="entry-title">DANH SÁCH CÂU HỎI</h2>
+                    <h2 class="entry-title">THÊM CÂU HỎI</h2>
                 </div><!-- .about-heading -->
             </div><!-- .col -->
         </div><!-- .row -->
-        <div class="row">
-            <div class="col-12">
-                <div class="about-heading">
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>Bài 1</option>
-                        <option>Bài 2</option>
-                        <option>Bài 3</option>
-                        <option>Bài 4</option>
-                        <option>Bài 5</option>
-                    </select>
-                </div><!-- .about-heading -->
-            </div><!-- .col -->
-        </div><!-- .row -->
-        <div class="row">
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="padding-top: 30px">
-                <button class="btn btn-danger" style="margin-bottom:20px"><a th:href="@{/qlbaihoc_themcauhoi.html}">Thêm câu hỏi</a></button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-0 col-sm-0 col-md-1 col-lg-1">
-                
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr class="text-center">
-                            <th class="text-center">Mã câu hỏi</th>
-                            <th class="text-center">Câu hỏi</th>
-                            <th class="text-center">Đáp án</th>
-                            <th class="text-center">Thao tác</th>
-                            <th class="text-center">Thao tác</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="text-center" th:each="question,pos : ${lCauHoi}">
-                            <td class="text-center" th:text="${question.getIdquestion()}"></td>
-                            <td class="text-center" th:text="${question.getContent()}"></td>
-                            <td class="text-center" th:text="${question.getKeyquestion()}"></td>
-                            <td class="text-center"><div class="btn btn-success"><a th:href="@{/qlbaihoc_chinhsuacauhoi={id}(id=${question.getIdquestion()})}">Chỉnh sửa</a></div></td>
-                            <td class="text-center"><div class="btn btn-danger"><a th:href="@{/xoacauhoi={id}(id=${question.getIdquestion()})}">Xóa</a></div></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+
+        <form class="flogin" style="padding-bottom: 30px" method="POST" th:action="@{/xulythemcauhoi}">
+                <div class="row text-center"> <!-- id -->
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right">
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center" style="padding-top: 20px">
+                        <label>Mã câu hỏi</label>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <input type="text" name="idquestion" required="true"/> 
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    </div>
+                </div>
+                <div class="row text-center"> <!--name -->
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right">
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center" style="padding-top: 20px">
+                        <label>Nội dung</label>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <input type="text" name="content" required="true"/> 
+                    </div>
+                </div>
+                <div class="row text-center"> <!-- describe -->
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right">
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center" style="padding-top: 20px">
+                        <label>Lựa chọn A</label>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <input type="text" name="optiona"  required="true"/>   
+                    </div>
+                </div>
+                <div class="row text-center"> <!-- describe -->
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right">
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center" style="padding-top: 20px">
+                        <label>Lựa chọn B</label>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <input type="text" name="optionb"  required="true"/>   
+                    </div>
+                </div>
+                <div class="row text-center"> <!-- describe -->
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right">
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center" style="padding-top: 20px">
+                        <label>Lựa chọn C</label>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <input type="text" name="optionc"  required="true"/>   
+                    </div>
+                </div>
+                <div class="row text-center"> <!-- describe -->
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right">
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center" style="padding-top: 20px">
+                        <label>Lựa chọn D</label>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <input type="text" name="optiond"  required="true"/>   
+                    </div>
+                </div>
+                <div class="row text-center"> <!-- describe -->
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right">
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center" style="padding-top: 20px">
+                        <label>Đáp án</label>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <input type="text" name="keyquestion"  required="true"/>   
+                    </div>
+                </div>
+                <div class="row text-center"> <!-- describe -->
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right">
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center" style="padding-top: 20px">
+                        <label>Cấp độ</label>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <input type="text" name="levelquestion"  required="true"/>   
+                    </div>
+                </div>
+                <div class="row text-center"> <!-- describe -->
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right">
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center" style="padding-top: 20px">
+                        <label>Chủ đề</label>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <input type="text" name="topic"  required="true"/>   
+                    </div>
+                </div>
+                <div class="row text-center"> <!-- add -->
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+                        <button type="submit" class="btn btn-danger">Thêm câu hỏi
+                        </button>
+                    </div>
+                </div>
+            </form>
     </div><!-- .container -->
-    
+
         <footer class="footer-area section-gap">
         <div class="container">
             <div class="row">
@@ -212,7 +264,7 @@
         </div>
     </footer>
 
-     <script type='text/javascript' th:src='@{/js/jquery.js}'></script>
+    <script type='text/javascript' th:src='@{/js/jquery.js}'></script>
     <script type='text/javascript' th:src='@{/js/swiper.min.js}'></script>
     <script type='text/javascript' th:src='@{/js/masonry.pkgd.min.js}'></script>
     <script type='text/javascript' th:src='@{/js/jquery.collapsible.min.js}'></script>

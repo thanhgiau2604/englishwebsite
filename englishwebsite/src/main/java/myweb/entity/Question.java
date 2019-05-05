@@ -32,7 +32,7 @@ public class Question {
     private String optiond;
 	
 	@Column(name = "keyquestion")
-    private char keyquestion;
+    private String keyquestion;
 	
 	@Column(name = "levelquestion")
     private int levelquestion;
@@ -45,7 +45,7 @@ public class Question {
 	}
 
 	public Question(String idquestion, String content, String optiona, String optionb, String optionc, String optiond,
-			char keyquestion, int levelquestion, String topic) {
+			String keyquestion, int levelquestion, String topic) {
 		this.idquestion = idquestion;
 		this.content = content;
 		this.optiona = optiona;
@@ -105,11 +105,11 @@ public class Question {
 		this.optiond = optiond;
 	}
 
-	public char getKeyquestion() {
+	public String getKeyquestion() {
 		return keyquestion;
 	}
 
-	public void setKeyquestion(char keyquestion) {
+	public void setKeyquestion(String keyquestion) {
 		this.keyquestion = keyquestion;
 	}
 

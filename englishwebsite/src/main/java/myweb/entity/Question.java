@@ -34,6 +34,9 @@ public class Question {
 	@Column(name = "keyquestion")
     private String keyquestion;
 	
+	@Column(name = "explainkey")
+    private String explainkey;
+	
 	@Column(name = "levelquestion")
     private int levelquestion;
 	
@@ -45,7 +48,7 @@ public class Question {
 	}
 
 	public Question(String idquestion, String content, String optiona, String optionb, String optionc, String optiond,
-			String keyquestion, int levelquestion, String topic) {
+			String keyquestion, String explainkey, int levelquestion, String topic) {
 		this.idquestion = idquestion;
 		this.content = content;
 		this.optiona = optiona;
@@ -53,6 +56,7 @@ public class Question {
 		this.optionc = optionc;
 		this.optiond = optiond;
 		this.keyquestion = keyquestion;
+		this.explainkey = explainkey;
 		this.levelquestion = levelquestion;
 		this.topic = topic;
 	}
@@ -111,6 +115,14 @@ public class Question {
 
 	public void setKeyquestion(String keyquestion) {
 		this.keyquestion = keyquestion;
+	}
+
+	public String getExplainkey() {
+		return explainkey;
+	}
+
+	public void setExplainkey(String explainkey) {
+		this.explainkey = explainkey;
 	}
 
 	public int getLevelquestion() {

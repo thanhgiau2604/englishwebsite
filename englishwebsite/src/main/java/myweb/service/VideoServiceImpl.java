@@ -29,14 +29,14 @@ public class VideoServiceImpl implements VideoService{
 	}
 
 	@Override
-	public void UpdateVideo(String url, String namevideo, int level, String topic, String idvideo) {
-		videoRepository.UpdateVideo(url, namevideo, level, topic, idvideo); 
+	public void UpdateVideo(String url, String namevideo, String describevideo, int level, String topic, String idvideo) {
+		videoRepository.UpdateVideo(url, namevideo, describevideo, level, topic, idvideo); 
 		
 	}
 
 	@Override
-	public void AddVideo(String idvideo, String url, String namevideo, int level, String topic) {
-		videoRepository.AddVideo(idvideo, url, namevideo, level, topic); 
+	public void AddVideo(String idvideo, String url, String namevideo, String describevideo, int level, String topic) {
+		videoRepository.AddVideo(idvideo, url, namevideo, describevideo, level, topic); 
 		
 	}
 

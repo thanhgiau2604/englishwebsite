@@ -13,16 +13,16 @@ import myweb.entity.Video;
 public interface VideoRepository extends CrudRepository<Video, String>{
 	@Modifying
 	@Transactional
-	@Query("Update Video vi SET vi.url=:url, vi.namevideo=:namevideo,vi.level=:level, vi.topic=:topic where vi.idvideo=:idvideo")
-	void UpdateVideo(@Param("url") String url, @Param("namevideo") String namevideo, @Param("level") int level, @Param("topic") String topic,
-			@Param("idvideo") String idvideo);
+	@Query("Update Video vi SET vi.url=:url, vi.namevideo=:namevideo,vi.describevideo=:describevideo, vi.level=:level, vi.topic=:topic where vi.idvideo=:idvideo")
+	void UpdateVideo(@Param("url") String url, @Param("namevideo") String namevideo, @Param("describevideo") String describevideo, 
+			@Param("level") int level, @Param("topic") String topic, @Param("idvideo") String idvideo);
 	
 	@Modifying
 	@Transactional
-	@Query(value = "Insert INTO Video (idvideo,url,namevideo,level,topic) "
-			+ "VALUES(:idvideo,:url,:namevideo,:level,:topic)", nativeQuery=true)
+	@Query(value = "Insert INTO Video (idvideo,url,namevideo,describevideo,level,topic) "
+			+ "VALUES(:idvideo,:url,:namevideo,:describevideo,:level,:topic)", nativeQuery=true)
 	void AddVideo(@Param("idvideo") String idvideo, @Param("url") String url, @Param("namevideo") String namevideo, 
-			@Param("level") int level, @Param("topic") String topic);
+			@Param("describevideo") String describevideo, @Param("level") int level, @Param("topic") String topic);
 	
 	@Modifying
 	@Transactional

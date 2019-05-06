@@ -19,6 +19,9 @@ public class Topic {
 	@Column(name = "nametopic")
     private String nametopic;
 	
+	@Column(name = "imagetopic")
+    private String imagetopic;
+	
 	@Column(name = "describetopic")
     private String describetopic;
 
@@ -26,9 +29,10 @@ public class Topic {
 
 	}
 
-	public Topic(String idtopic, String nametopic, String describetopic) {
+	public Topic(String idtopic, String nametopic, String imagetopic, String describetopic) {
 		this.idtopic = idtopic;
 		this.nametopic = nametopic;
+		this.imagetopic = imagetopic;
 		this.describetopic = describetopic;
 	}
 
@@ -46,6 +50,14 @@ public class Topic {
 
 	public void setNametopic(String nametopic) {
 		this.nametopic = nametopic;
+	}
+
+	public String getImagetopic() {
+		return imagetopic;
+	}
+
+	public void setImagetopic(String imagetopic) {
+		this.imagetopic = imagetopic;
 	}
 
 	public String getDescribetopic() {

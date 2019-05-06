@@ -46,8 +46,8 @@ public class QLBHController {
 	
 		@RequestMapping(value = "/xulythemtopic", method = RequestMethod.POST)
 		public String XuLyThemTopic(@RequestParam("idtopic") String idtopic, @RequestParam("name") String name, 
-				@RequestParam("describe") String describe, Model model) {	
-			topicService.AddTopic(idtopic, name, describe);
+				@RequestParam("imagetopic") String imagetopic,@RequestParam("describe") String describe, Model model) {	
+			topicService.AddTopic(idtopic, name, imagetopic, describe);
 			model.addAttribute("lTopic",topicService.findAll());
 			return "qlbaihoc_topic";
 		}
@@ -60,8 +60,8 @@ public class QLBHController {
 	
 		@RequestMapping(value = "/xulychinhsuatopic", method = RequestMethod.POST)
 		public String XuLyChinhSuaTopic(@RequestParam("idtopic") String idtopic, @RequestParam("name") String name, 
-				@RequestParam("describe") String describe, Model model) {	
-			topicService.UpdateTopic(name, describe,idtopic);
+				@RequestParam("imagetopic") String imagetopic, @RequestParam("describe") String describe, Model model) {	
+			topicService.UpdateTopic(name, imagetopic,describe,idtopic);
 			model.addAttribute("lTopic",topicService.findAll());
 			return "qlbaihoc_topic";
 		}
@@ -88,9 +88,9 @@ public class QLBHController {
 	
 		@RequestMapping(value = "/xulythemvideo", method = RequestMethod.POST)
 		public String XuLyThemVideo(@RequestParam("idvideo") String idvideo, @RequestParam("url") String url, 
-				@RequestParam("namevideo") String namevideo, @RequestParam("level") String level, @RequestParam("topic") String topic, Model model) {	
+				@RequestParam("namevideo") String namevideo, @RequestParam("describevideo") String describevideo, @RequestParam("level") String level, @RequestParam("topic") String topic, Model model) {	
 			int capdo = Integer.parseInt(level);
-			videoService.AddVideo(idvideo, url, namevideo, capdo, topic);
+			videoService.AddVideo(idvideo, url, namevideo, describevideo,capdo, topic);
 			model.addAttribute("lVideo",videoService.findAll());
 			return "qlbaihoc_video";	
 		}
@@ -105,9 +105,9 @@ public class QLBHController {
 	
 		@RequestMapping(value = "/xulychinhsuavideo", method = RequestMethod.POST)
 		public String XuLyEditVideo(@RequestParam("idvideo") String idvideo, @RequestParam("url") String url, 
-				@RequestParam("namevideo") String namevideo, @RequestParam("level") String level, @RequestParam("topic") String topic, Model model) {	
+				@RequestParam("namevideo") String namevideo, @RequestParam("describevideo") String describevideo, @RequestParam("level") String level, @RequestParam("topic") String topic, Model model) {	
 			int capdo = Integer.parseInt(level);
-			videoService.UpdateVideo(url, namevideo, capdo, topic, idvideo); 
+			videoService.UpdateVideo(url, namevideo, describevideo,capdo, topic, idvideo); 
 			model.addAttribute("lVideo",videoService.findAll());
 			return "qlbaihoc_video";	
 		}
@@ -134,10 +134,10 @@ public class QLBHController {
 		@RequestMapping(value = "/xulythemcauhoi", method = RequestMethod.POST)
 		public String XuLyThemCauHoi(@RequestParam("idquestion") String idquestion, @RequestParam("content") String content, 
 				@RequestParam("optiona") String optiona, @RequestParam("optionb") String optionb, @RequestParam("optionc") String optionc, 
-				@RequestParam("optiond") String optiond, @RequestParam("keyquestion") String keyquestion, 
+				@RequestParam("optiond") String optiond, @RequestParam("keyquestion") String keyquestion, @RequestParam("explainkey") String explainkey,
 				@RequestParam("levelquestion") String levelquestion, @RequestParam("topic") String topic, Model model) {	
 			int capdo = Integer.parseInt(levelquestion);
-			questionService.AddQuestion(idquestion, content, optiona, optionb, optionc, optiond, keyquestion, capdo, topic); 
+			questionService.AddQuestion(idquestion, content, optiona, optionb, optionc, optiond, keyquestion, explainkey, capdo, topic); 
 			model.addAttribute("lCauHoi",questionService.findAll());
 			return "qlbaihoc_cauhoi";	
 		}
@@ -153,10 +153,10 @@ public class QLBHController {
 		@RequestMapping(value = "/xulychinhsuacauhoi", method = RequestMethod.POST)
 		public String XuLyChinhSuaCauHoi(@RequestParam("idquestion") String idquestion, @RequestParam("content") String content, 
 				@RequestParam("optiona") String optiona, @RequestParam("optionb") String optionb, @RequestParam("optionc") String optionc, 
-				@RequestParam("optiond") String optiond, @RequestParam("keyquestion") String keyquestion, 
+				@RequestParam("optiond") String optiond, @RequestParam("keyquestion") String keyquestion, @RequestParam("explainkey") String explainkey,
 				@RequestParam("levelquestion") String levelquestion, @RequestParam("topic") String topic, Model model) {	
 			int capdo = Integer.parseInt(levelquestion);
-			questionService.UpdateQuestion(content, optiona, optionb, optionc, optiond, keyquestion, capdo, topic, idquestion); 
+			questionService.UpdateQuestion(content, optiona, optionb, optionc, optiond, keyquestion, explainkey, capdo, topic, idquestion); 
 			model.addAttribute("lCauHoi",questionService.findAll());
 			return "qlbaihoc_cauhoi";	
 		}

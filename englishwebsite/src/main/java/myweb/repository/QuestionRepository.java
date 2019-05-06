@@ -14,18 +14,18 @@ public interface QuestionRepository extends CrudRepository<Question, String>{
 	@Modifying
 	@Transactional
 	@Query("Update Question qu SET qu.content=:content, qu.optiona=:optiona, qu.optionb=:optionb, qu.optionc=:optionc, qu.optiond=:optiond,"
-			+ "qu.keyquestion=:keyquestion, qu.levelquestion=:levelquestion, qu.topic=:topic where qu.idquestion=:idquestion")
+			+ "qu.keyquestion=:keyquestion, qu.explainkey=:explainkey,qu.levelquestion=:levelquestion, qu.topic=:topic where qu.idquestion=:idquestion")
 	void UpdateQuestion(@Param("content") String content, @Param("optiona") String optiona, @Param("optionb") String optionb,
-			@Param("optionc") String optionc, @Param("optiond") String optiond,@Param("keyquestion") String keyquestion, @Param("levelquestion") int levelquestion,
-			@Param("topic") String topic, @Param("idquestion") String idquestion);
+			@Param("optionc") String optionc, @Param("optiond") String optiond,@Param("keyquestion") String keyquestion, @Param("explainkey") String explainkey,
+			@Param("levelquestion") int levelquestion, @Param("topic") String topic, @Param("idquestion") String idquestion);
 	
 	@Modifying
 	@Transactional
-	@Query(value = "Insert INTO Question (idquestion,content,optiona,optionb,optionc,optiond,keyquestion,levelquestion,topic) "
-			+ "VALUES(:idquestion,:content,:optiona,:optionb,:optionc,:optiond,:keyquestion,:levelquestion,:topic)", nativeQuery=true)
+	@Query(value = "Insert INTO Question (idquestion,content,optiona,optionb,optionc,optiond,keyquestion,explainkey,levelquestion,topic) "
+			+ "VALUES(:idquestion,:content,:optiona,:optionb,:optionc,:optiond,:keyquestion,:explainkey,:levelquestion,:topic)", nativeQuery=true)
 	void AddQuestion(@Param("idquestion") String idquestion, @Param("content") String content, @Param("optiona") String optiona, 
 			@Param("optionb") String optionb, @Param("optionc") String optionc, @Param("optiond") String optiond,
-			@Param("keyquestion") String keyquestion,@Param("levelquestion") int levelquestion, @Param("topic") String topic);
+			@Param("keyquestion") String keyquestion, @Param("explainkey") String explainkey, @Param("levelquestion") int levelquestion, @Param("topic") String topic);
 	
 	@Modifying
 	@Transactional

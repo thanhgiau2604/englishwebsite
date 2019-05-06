@@ -22,6 +22,9 @@ public class Video {
 	@Column(name = "namevideo")
     private String namevideo;
 	
+	@Column(name="describevideo")
+	private String describevideo;
+	
 	@Column(name = "level")
     private int level;
 	
@@ -31,11 +34,11 @@ public class Video {
 	public Video() {
 	}
 
-	public Video(String idvideo, String url, String namevideo, int level, String topic) {
-		super();
+	public Video(String idvideo, String url, String namevideo, String describevideo, int level, String topic) {
 		this.idvideo = idvideo;
 		this.url = url;
 		this.namevideo = namevideo;
+		this.describevideo = describevideo;
 		this.level = level;
 		this.topic = topic;
 	}
@@ -62,6 +65,14 @@ public class Video {
 
 	public void setNamevideo(String namevideo) {
 		this.namevideo = namevideo;
+	}
+
+	public String getDescribevideo() {
+		return describevideo;
+	}
+
+	public void setDescribevideo(String describevideo) {
+		this.describevideo = describevideo;
 	}
 
 	public int getLevel() {

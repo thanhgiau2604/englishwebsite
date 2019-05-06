@@ -5,7 +5,7 @@ import myweb.entity.Topic;
 public interface TopicService {
 	Iterable<Topic> findAll();
 	Topic findOne(String idtopic);
-	void UpdateTopic(String name, String describe, String idtopic);
-	void AddTopic(String idtopic, String name, String describe);
+	void UpdateTopic(String name, String imagetopic, String describe, String idtopic);
+	void AddTopic(String idtopic, String name, String imagetopic,String describe);
 	void DeleteTopic(String idtopic);
 }

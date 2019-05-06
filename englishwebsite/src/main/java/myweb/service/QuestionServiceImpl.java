@@ -23,15 +23,15 @@ public class QuestionServiceImpl implements QuestionService {
 
 	@Override
 	public void UpdateQuestion(String content, String optiona, String optionb, String optionc, String optiond,
-			String keyquestion, int levelquestion, String topic, String idquestion) {
-		questionRepository.UpdateQuestion(content, optiona, optionb, optionc, optiond, keyquestion, levelquestion, topic, idquestion); 
+			String keyquestion, String explainkey,int levelquestion, String topic, String idquestion) {
+		questionRepository.UpdateQuestion(content, optiona, optionb, optionc, optiond, keyquestion, explainkey, levelquestion, topic, idquestion); 
 		
 	}
 
 	@Override
 	public void AddQuestion(String idquestion, String content, String optiona, String optionb, String optionc,
-			String optiond, String keyquestion, int levelquestion, String topic) {
-		questionRepository.AddQuestion(idquestion, content, optiona, optionb, optionc, optiond, keyquestion, levelquestion, topic);
+			String optiond, String keyquestion, String explainkey,int levelquestion, String topic) {
+		questionRepository.AddQuestion(idquestion, content, optiona, optionb, optionc, optiond, keyquestion, explainkey, levelquestion, topic);
 		
 	}
 

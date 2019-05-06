@@ -9,18 +9,17 @@ import myweb.repository.TopicRepository;
 @Service
 public class TopicServiceImpl implements TopicService {
 
-	
 	@Autowired
     private TopicRepository topicRepository;
 	
 	@Override
-	public void UpdateTopic(String name, String describe, String idtopic) {
-		topicRepository.UpdateTopic(name, describe, idtopic); 
+	public void UpdateTopic(String name, String imagetopic, String describe, String idtopic) {
+		topicRepository.UpdateTopic(name, imagetopic,describe, idtopic); 
 	}
 
 	@Override
-	public void AddTopic(String idtopic, String name, String describe) {
-		topicRepository.AddTopic(idtopic, name, describe);
+	public void AddTopic(String idtopic, String name, String imagetopic, String describe) {
+		topicRepository.AddTopic(idtopic, name, imagetopic, describe);
 	}
 
 	@Override

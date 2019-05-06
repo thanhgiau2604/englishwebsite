@@ -12,14 +12,14 @@ import myweb.entity.Topic;
 public interface TopicRepository extends CrudRepository<Topic, String> {
 	@Modifying
 	@Transactional
-	@Query("Update Topic to SET to.nametopic=:name, to.describetopic=:describe where to.idtopic=:idtopic")
-	void UpdateTopic(@Param("name") String name, @Param("describe") String describe, @Param("idtopic") String idtopic);
+	@Query("Update Topic to SET to.nametopic=:name, to.imagetopic=:imagetopic,to.describetopic=:describe where to.idtopic=:idtopic")
+	void UpdateTopic(@Param("name") String name, @Param("imagetopic") String imagetopic, @Param("describe") String describe, @Param("idtopic") String idtopic);
 	
 	@Modifying
 	@Transactional
-	@Query(value = "Insert INTO Topic (idtopic,nametopic,describetopic) "
-			+ "VALUES(:idtopic,:name,:describe)", nativeQuery=true)
-	void AddTopic(@Param("idtopic") String idtopic, @Param("name") String name, @Param("describe") String describe);
+	@Query(value = "Insert INTO Topic (idtopic,nametopic,imagetopic,describetopic) "
+			+ "VALUES(:idtopic,:name,:imagetopic,:describe)", nativeQuery=true)
+	void AddTopic(@Param("idtopic") String idtopic, @Param("name") String name, @Param("imagetopic") String imagetopic, @Param("describe") String describe);
 	
 	@Modifying
 	@Transactional

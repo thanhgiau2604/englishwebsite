@@ -58,7 +58,7 @@
                                     <div class="khung">
                                         <button class="nuttt">
                                             <img src="Images/user.png" alt="avatar" class="ava" style="vertical-align:middle"/>
-                                             admin
+                                             <span th:text="${session.username}"></span>
                                         </button>   
                                        <div class="danhmuctt">
                                             <a href="thaydoithongtinad.html">Thay Đổi Thông Tin</a>
@@ -137,21 +137,24 @@
             </div><!-- .col -->
         </div><!-- .row -->
 
-        <div class="row quanly" style="padding-bottom: 30px">
-            <div class="col-xs-5 col-sm-4 col-md-4 col-lg-4 boxthumbnail">
-                <div class="preview_outer wow fadeIn" data-wow-delay="300ms">
-                    <div class="thumbnail text-center">
-                        <img src="images/topic.png" width="70%" alt="" />
-                        <div class="overlay">
-                            <h3 style="color: white">Quản lý câu hỏi</h3>
-                            <a href="qlbaihoc_cauhoi.html" class="btn btn-primary nutclick">Chọn</a>
-                        </div>
-                        <h3 class="caption" style="padding-top: 20px">Quản lý câu hỏi</h3>   
-                    </div>  
-                </div>
-            </div>
-        </div>
-    </div><!-- .container -->
+		<div class="row quanly" style="padding-bottom: 30px">
+			<th:block th:each="topic,pos : ${lTopic}">
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 boxthumbnail">
+					<div class="preview_outer wow fadeIn" data-wow-delay="300ms">
+						<div class="thumbnail text-center">
+							<img th:src="@{${topic.getImagetopic()}}" width="70%" height="30%" alt="" />
+							<div class="overlay">
+								<h3 style="color: white" th:text="${topic.getNametopic()}"></h3>
+								<a th:href="@{/xulychontopic={id}(id=${topic.getIdtopic()})}" class="btn btn-primary nutclick">Chọn</a>
+							</div>
+							<h3 class="caption" style="padding-top: 20px"
+								th:text="${topic.getNametopic()}"></h3>
+						</div>
+					</div>
+				</div>
+			</th:block>
+		</div>
+	</div><!-- .container -->
 
         <footer class="footer-area section-gap">
         <div class="container">

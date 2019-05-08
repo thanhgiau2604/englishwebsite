@@ -33,8 +33,8 @@ public class StudyServiceImpl implements StudyService{
 	}
 
 	@Override
-	public void InsertProcess(String username, String topic, int level) {
-		studyRepository.InsertProcess(username, topic, level);
+	public void InsertProcess(String username, String topic, int level, int correct) {
+		studyRepository.InsertProcess(username, topic, level, correct);
 		
 	}
 

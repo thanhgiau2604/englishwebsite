@@ -30,8 +30,9 @@ public interface StudyRepository extends CrudRepository<Study, String>{
 	@Modifying
 	@Transactional
 	@Query(value = "Insert INTO Study (username,topic,level,correct,pass) "
-			+ "VALUES(:username,:topic,:level,0,0)", nativeQuery=true)
-	void InsertProcess(@Param("username") String username, @Param("topic") String topic, @Param("level") int level);
+			+ "VALUES(:username,:topic,:level,:correct,1)", nativeQuery=true)
+	void InsertProcess(@Param("username") String username, @Param("topic") String topic, @Param("level") int level,
+			@Param("correct") int correct);
 	
 	//Reset topic
 	@Modifying

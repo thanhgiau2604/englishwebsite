@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "userstudy") //tên table trong csdl
+@Table(name = "study") //tên table trong csdl
 public class Study {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)

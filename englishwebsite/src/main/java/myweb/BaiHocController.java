@@ -140,6 +140,8 @@ public class BaiHocController {
 						count+=1;
 			}
 			double phantram = (count*100)/lQuestion.size();
+			double diemso = (10/lQuestion.size())*count;
+			String diemSo = String.format("%.2f", diemso);
 			String thongbao="",strlev="";
 			int lev = Integer.parseInt(level);
 			
@@ -153,13 +155,17 @@ public class BaiHocController {
 						strlev="khó";
 			if (phantram>75) {
 				studyService.InsertProcess(username, topic, lev,count); 
-				thongbao="Bạn đã vượt qua mức độ "+strlev+" bạn có thể chọn BẮT ĐẦU để đến với mức độ tiếp theo";
+				thongbao="Điểm số:"+diemSo+". Bạn đã vượt qua mức độ "+strlev+", bạn có thể chọn BẮT ĐẦU để đến với mức độ tiếp theo";
+				model.addAttribute("level", lev+1);
 			}
 			else
 			{
-				thongbao="Bạn không vượt qua mức độ "+strlev+" bạn có thể chọn BẮT ĐẦU để thực hiện lại bài kiểm tra!";
+				thongbao="Điểm số:"+diemSo+". Bạn không vượt qua mức độ "+strlev+", bạn có thể chọn BẮT ĐẦU để xem lại bài học!";
+				model.addAttribute("level", lev);
 			}
 			model.addAttribute("thongbao", thongbao);
+			model.addAttribute("topic", topic);
+			
 			return "hoc_luachonnd";
 		}
 }

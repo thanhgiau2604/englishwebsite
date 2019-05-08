@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import myweb.entity.Question;
 import myweb.entity.Study;
+import myweb.entity.Video;
 import myweb.repository.StudyRepository;
 
 @Service
@@ -38,7 +39,7 @@ public class StudyServiceImpl implements StudyService{
 	}
 
 	@Override
-	public void ResetTopic(String username, String topic, int level) {
+	public void ResetTopic(String username, String topic) {
 		studyRepository.ResetTopic(username, topic);
 		
 	}
@@ -66,6 +67,11 @@ public class StudyServiceImpl implements StudyService{
 	@Override
 	public int GetCorrect(String username, String topic, String level) {
 		return studyRepository.GetCorrect(username, topic, level);
+	}
+
+	@Override
+	public List<Video> SelectListVideo(String topic) {
+		return studyRepository.SelectListVideo(topic); 
 	}
 	
 }

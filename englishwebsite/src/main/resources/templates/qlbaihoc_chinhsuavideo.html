@@ -182,7 +182,8 @@
                     <label>Mô tả</label>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <input type="text" name="describevideo" th:value="${video.getDescribevideo()}"/> 
+                    <!-- <input type="text" name="describevideo" /> -->
+                    <textarea name="describevideo" th:text="${video.getDescribevideo()}" style="width:100%; heigth:100%"></textarea>
                 </div>
             </div>
             <div class="row text-center"> <!-- Cấp độ -->

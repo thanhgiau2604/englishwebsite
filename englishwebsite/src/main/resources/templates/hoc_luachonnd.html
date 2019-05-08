@@ -1,34 +1,41 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Đổi mật khẩu</title>
+    <title>Học tiếng Anh qua Video</title>
 
     <!-- Required meta tags -->
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
 
     <!-- FontAwesome CSS -->
-    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}" />
 
     <!-- ElegantFonts CSS -->
-    <link rel="stylesheet" th:href="@{/css/elegant-fonts.css}"/>
+    <link rel="stylesheet" th:href="@{/css/elegant-fonts.css}" />
 
     <!-- themify-icons CSS -->
-    <link rel="stylesheet" th:href="@{/css/themify-icons.css}"/>
+    <link rel="stylesheet" th:href="@{/css/themify-icons.css}" />
 
     <!-- Swiper CSS -->
-    <link rel="stylesheet" th:href="@{/css/swiper.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/swiper.min.css}" />
 
     <!-- Styles -->
-    <link rel="stylesheet" th:href="@{/css/style.css}"/>
-    
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+
     <style th:inline="text">
-		.about-page .page-header {
-		background: url([[@{/images/courses-header.jpg}]]) no-repeat center;
-		}
-	</style>
+        .about-page .page-header {
+        background: url([[@{/images/courses-header.jpg}]]) no-repeat center;
+        }
+    </style>
+    <style type="text/css">
+        button a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
 </head>
 <body class="about-page">
     <div class="page-header">
@@ -56,12 +63,12 @@
                                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                     <div class="khung">
                                         <button class="nuttt">
-                                            <img src="images/user.png" alt="avatar" class="ava" style="vertical-align:middle"/>
+                                            <img src="Images/user.png" alt="avatar" class="ava" style="vertical-align:middle"/>
                                              <span th:text="${session.username}"></span>
                                         </button>   
-                                        <div class="danhmuctt">
-                                            <a href="thaydoithongtinuser.html">Thay Đổi Thông Tin</a>
-                                            <a href="doimatkhauuser">Đổi Mật Khẩu</a>
+                                       <div class="danhmuctt">
+                                            <a href="thaydoithongtinad.html">Thay Đổi Thông Tin</a>
+                                            <a href="doimatkhauad">Đổi Mật Khẩu</a>
                                             <a href="trangchu.html">Đăng Xuất</a>
                                         </div>
                                     </div> <!-- end khung -->
@@ -76,16 +83,17 @@
                     <div class="row">
                         <div class="col-3 col-lg-3">
                             <div class="site-branding">
-                                <h1 class="site-title"><a href="trangchuuser.html" rel="home">Eng<span>Edu</span></a></h1>
+                                <h1 class="site-title"><a href="trangchuad.html" rel="home">Eng<span>Edu</span></a></h1>
                             </div><!-- .site-branding -->
                         </div><!-- .col -->
 
                         <div class="col-9 col-lg-9 flex justify-content-end align-content-center">
-                           <nav class="site-navigation flex justify-content-end align-items-center">
-                                <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
-                                    <li><a href="trangchuuser.html">Trang chủ</a></li>
+                            <nav class="site-navigation flex justify-content-end align-items-center">
+                                <ul
+                                    class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
+                                    <li><a href="trangchu.html">Trang chủ</a></li>
                                     <li><a href="hoc_dstopic.html">Học qua Video và Thi trực tuyến</a></li>
-                                    <li><a href="lienheuser.html">Liên hệ</a></li>
+                                    <li><a href="lienhe.html">Liên hệ</a></li>
                                 </ul>
 
                                 <div class="hamburger-menu d-lg-none">
@@ -94,7 +102,6 @@
                                     <span></span>
                                     <span></span>
                                 </div><!-- .hamburger-menu -->
-
                             </nav><!-- .site-navigation -->
                         </div><!-- .col -->
                     </div><!-- .row -->
@@ -108,7 +115,7 @@
                 <div class="row">
                     <div class="col-12">
                         <header class="entry-header">
-                        <h1>ĐỔI MẬT KHẨU</h1>
+                            <h1>THÔNG BÁO</h1>
                         </header><!-- .entry-header -->
                     </div><!-- .col -->
                 </div><!-- .row -->
@@ -117,76 +124,23 @@
     </div><!-- .page-header -->
 
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="breadcrumbs">
-                    <ul class="flex flex-wrap align-items-center p-0 m-0">
-                        <li><a href="trangchuuser.html"><i class="fa fa-home"></i>Trang chủ</a></li>
-                        <li><a href="doimatkhauuser.html">Đổi mật khẩu</a></li>
-                    </ul>
-                </div><!-- .breadcrumbs -->
-            </div><!-- .col -->
+        <div class="row text-center" style="padding-top: 30px">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <p th:text="${thongbao}"></p>
+            </div>
         </div><!-- .row -->
-
-        <div class="row">
-            <div class="col-12">
-                <div class="about-heading">
-                    <h2 class="entry-title">ĐỔI MẬT KHẨU</h2>
-                </div><!-- .about-heading -->
-            </div><!-- .col -->
-        </div><!-- .row -->
-
-        <form class="flogin" style="padding-bottom: 30px" method="POST" th:action="@{/xulydoimatkhau}">
-                <div class="row text-center"> <!-- mật khẩu cũ -->
-                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right">
-                    </div>
-                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center" style="padding-top: 20px">
-                        <label>Mật khẩu cũ</label>
-                    </div>
-                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        <input type="password" name="oldpass" required="true" /> 
-                    </div>
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                    </div>
-                </div>
-                <div class="row text-center"> <!-- mật khẩu mới-->
-                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right">
-                    </div>
-                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center" style="padding-top: 20px">
-                        <label>Mật khẩu mới</label>
-                    </div>
-                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        <input type="password" name="newpass" required="true"/> 
-                    </div>
-                </div>
-                <div class="row text-center"> <!-- Nhập lại mật khẩu mới-->
-                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right">
-                    </div>
-                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center" style="padding-top: 20px">
-                        <label>Nhập lại mật khẩu mới</label>
-                    </div>
-                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        <input type="password" name="repass" required="true"/>   
-                    </div>
-                </div>
-                
-                <div class="row text-center"> <!-- save -->
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
-                    </div>
-                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
-                        <button type="submit" class="btn btn-danger">Cập nhật mật khẩu</button>
-                    </div>
-                </div>
-                
-                <div class="container text-center">
-					<th:block th:if="${checkdoimatkhau==1}">
-						<h5 style="color: red">Mật khẩu cũ không đúng!</h5>
-					</th:block>
-					<th:block th:if="${checkdoimatkhau==2}">
-						<h5 style="color: red">Xác nhận mật khẩu không khớp!</h5>
-					</th:block>
-				</div>
-            </form>
+        <div class="row text-center">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <p class="text-center">Bạn lựa chọn:</p>
+            </div>           
+        </div>
+        <div class="row text-center" style="padding-bottom: 30px">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <button class="btn btn-primary"><a th:href="@{/hienthidsvideo={id}/{level}(id=${topic},level=${level})}">Bắt đầu</a></button>
+                <button class="btn btn-primary"><a href="trangchuuer.html">Về trang chủ</a></button>
+                <button class="btn btn-primary"><a th:href="@{/resettopic={id}(id=${topic})}">Reset chủ đề</a></button>
+            </div>
+        </div>
     </div><!-- .container -->
 
         <footer class="footer-area section-gap">
@@ -194,7 +148,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 logo-left no-padding text-center">
                         <h1 class="site-title text-center">
-                            <a href="trangchuuser.html" class="text-center">Eng<span>Edu</span></a>
+                            <a href="trangchuad.html" class="text-center">Eng<span>Edu</span></a>
                         </h1>
                 </div>
             </div>

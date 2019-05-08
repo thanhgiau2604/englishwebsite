@@ -1,0 +1,120 @@
+
+/* themmoi */
+.row.vaothi{
+    padding-top:30px;
+    padding-bottom: 50px;
+}
+
+.boxtt {
+
+margin-right: 0px;
+}
+
+.boxtt:nth-child(1n) {
+    float: left;
+    clear: none;
+}
+.boxtt {
+    background: #e4e0e0;
+    padding-top: 13px;
+    padding-left: 10px;
+    width: 89%;
+}
+
+.td {
+    margin-bottom: 0;
+    font-size: 18px;
+    color: #68b528;
+    font-weight: 700;
+    padding-left: 10px;
+    padding-bottom: 0;
+}
+.thongtin {
+    padding: 0 3px;
+    list-style-type: none;
+}
+
+.dm {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.anhicon {
+    margin-right: 10px;
+}
+.nutnop {
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+}
+
+.btn.btn-warning.nutnop a {
+    text-decoration: none;
+    color: white;
+}
+.nutnop {
+    text-align: center;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 16px;
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    margin-left: 0px;
+}
+
+.btn.btn-warning.nutnop {margin-right: 28%;}
+
+.noidungch ul {
+    list-style-type: none;
+}
+
+.btnthaotac a {
+    color: #fdf9f9;
+    text-decoration: none;
+}
+
+.btn.btn-danger.btnthaotac.btntt {
+    float: right;
+    margin-right: 18px;
+}
+
+.btn.btn-danger.btnthaotac.btntruoc {
+    float: left;
+}
+
+.btn.btn-danger.btnthaotac.btntt {
+}
+
+.btnthaotac {
+    margin-top: 36px;
+    border-radius: 16px;
+}
+
+.cauhoi {
+    font-size: 18px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.noidungch {
+    padding-bottom: 0;
+}
+
+.khungbl {
+    background: #d7ecb5;
+    margin-left: -56px;
+    padding: 14px 52px;
+    padding-bottom: 40px;
+}
+
+ul.cacluachon li {
+    font-size: 15px;
+}
+
+.tenbl{
+    color: blue;
+}
+/* end them moi */

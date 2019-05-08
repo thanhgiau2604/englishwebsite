@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import myweb.entity.Question;
 import myweb.entity.Study;
+import myweb.entity.Video;
 
 public interface StudyRepository extends CrudRepository<Study, String>{
 	//Cập nhật pass=1
@@ -57,4 +58,8 @@ public interface StudyRepository extends CrudRepository<Study, String>{
 	//Lấy điểm số của level
 	@Query("Select stu.correct from Study stu where stu.username=:username and stu.topic=:topic and stu.level=:level")
 	int GetCorrect(@Param("username") String username, @Param("topic") String topic, @Param("level") String level);
+	
+	//Lấy ds video
+	@Query("Select vid from Video vid where vid.topic=:topic")
+	List<Video> SelectListVideo(@Param("topic") String topic);
 }

@@ -35,6 +35,10 @@
             text-decoration: none;
             color: white;
         }
+        button a:hover {
+        	text-decoration:none;
+        	color:white;
+        }
     </style>
 </head>
 <body class="about-page">
@@ -135,9 +139,9 @@
         </div>
         <div class="row text-center" style="padding-bottom: 30px">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <button class="btn btn-primary"><a th:href="@{/hienthidsvideo={id}/{level}(id=${topic},level=${level})}">Bắt đầu</a></button>
-                <button class="btn btn-primary"><a href="trangchuuer.html">Về trang chủ</a></button>
-                <button class="btn btn-primary"><a th:href="@{/resettopic={id}(id=${topic})}">Reset chủ đề</a></button>
+                <button class="btn btn-success"><a th:href="@{/hienthidsvideo={id}/{level}(id=${topic},level=${level})}">Bắt đầu</a></button>
+                <button class="btn btn-primary"><a href="trangchuuser.html">Về trang chủ</a></button>
+                <button class="btn btn-danger"><a th:href="@{/resettopic={id}(id=${topic})}">Reset chủ đề</a></button>
             </div>
         </div>
     </div><!-- .container -->

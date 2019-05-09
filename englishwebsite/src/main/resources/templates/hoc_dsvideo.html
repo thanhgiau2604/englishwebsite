@@ -107,7 +107,7 @@
                 <div class="row">
                     <div class="col-12 text-center">
                         <header class="entry-header">
-                            <h1>CHỦ ĐỀ: MẠO TỪ</h1>
+                            <h1 th:text="${'Chủ đề: '+topic}"></h1>
                             <h3 style="color:white" th:text="${strlevel}"></h3>
                         </header><!-- .entry-header -->
                     </div><!-- .col -->
@@ -131,7 +131,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="about-heading">
-                    <h2 class="entry-title">Mạo từ</h2>
+                    <h2 class="entry-title" th:text="${topic}"></h2>
                 </div><!-- .about-heading -->
             </div><!-- .col -->
             <div class="col-12 text-center" style="padding-top: 30px">

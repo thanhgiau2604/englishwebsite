@@ -136,6 +136,7 @@ public class BaiHocController {
 			for (int i = 0; i < lQuestion.size(); i++) {
 				String param = "question"+(i+1);
 				String userchoose = request.getParameter(param);
+				if (userchoose==null) continue;
 				if (userchoose.equals(lQuestion.get(i).getKeyquestion()))
 						count+=1;
 			}
